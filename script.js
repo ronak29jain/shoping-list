@@ -13,15 +13,18 @@ function additem (){
     inputitem.value = '';
 }
 
-button.addEventListener('click', function(){
+function additemafterclick(){
     if (inputlength() > 0){
         additem ();
     }
-})
+}
 
-inputitem.addEventListener('keypress', function(event){
+function additemafterkeypress(event){
     if (inputlength() > 0 && event.code === 'Enter'){
         additem();
     }
-})
-''
+}
+
+button.addEventListener('click', additemafterclick)
+
+inputitem.addEventListener('keypress', additemafterkeypress)
